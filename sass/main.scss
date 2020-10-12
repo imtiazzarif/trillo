@@ -1,3 +1,19 @@
-
 @import "abstracts/variables";
-@import"base/base";
+@import "abstracts/mixins";
+
+@import "base/base";
+@import "base/typography";
+
+@import "components/nav_icons";
+@import "components/side-nav";
+@import "components/gallery";
+@import "components/button";
+@import "components/review";
+
+@import "layout/header";
+@import "layout/content";
+@import "layout/overview";
+@import "layout/details";
+@import "layout/cta";
+
+@import "pages/home";

@@ -1,0 +1,124 @@
+.btn {
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-inline {
+  color: var(--color-primary);
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  background-color: transparent;
+  transition: all 0.2s;
+  &:hover {
+    color: var(--color-grey-dark-1);
+  }
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
+.btn-hover {
+  padding: 1rem 2rem;
+  background: var(--color-primary-light);
+  border-radius: 200px;
+  font-family: inherit;
+  color: var(--color-grey-light-2);
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.2rem;
+  position: relative;
+  transition: all 0.4s;
+  z-index: 5;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 200px;
+
+    background-color: var(--color-primary-light);
+    z-index: -100;
+    transition: all 0.4s;
+  }
+  &:hover::after {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.btn-change {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  overflow: hidden;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  color: #fff;
+  position: relative;
+  transition: all 0.2s;
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+  }
+
+  & > * {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s;
+  }
+  .btn__visible {
+    padding: 2rem 7.5rem;
+    @include respond(phone) {
+      padding: 1.7rem 5.5rem;
+    }
+  }
+  .btn__invisible {
+    display: inline-block;
+    position: absolute;
+    padding: 2rem 0rem;
+    top: -100%;
+    left: 0;
+    @include respond(phone) {
+      padding: 1.7rem 0;
+    }
+
+    width: 100%;
+  }
+  &:hover .btn__visible {
+    transform: translateY(100%);
+  }
+  &:hover .btn__invisible {
+    top: 0;
+  }
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}

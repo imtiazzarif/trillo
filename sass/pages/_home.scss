@@ -1,0 +1,12 @@
+.gallery {
+  display: flex;
+}
+.description {
+  background: #fff;
+  flex: 0 0 60%;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+}
+.user-review {
+  flex: 1;
+}

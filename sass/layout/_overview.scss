@@ -1,0 +1,50 @@
+.overview {
+  display: flex;
+  align-items: center;
+
+  &__stars {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+  }
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-Primary);
+    @include respond(phone) {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+  &__location {
+    display: flex;
+
+    align-items: center;
+  }
+  &__icon-location {
+    margin-right: 0.5rem;
+  }
+  &__rating {
+    background-color: var(--color-primary);
+    color: #fff;
+    margin-left: 3rem;
+    align-self: stretch;
+    padding: 0 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @include respond(phone) {
+      padding: 0 1rem;
+      text-align: center;
+      margin-left: 1rem;
+    }
+  }
+  &__rating-average {
+    margin-bottom: -7px;
+    @include respond(phone) {
+      margin-bottom: -3px;
+    }
+  }
+}
